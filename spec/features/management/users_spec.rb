@@ -2,10 +2,11 @@ require 'rails_helper'
 
 feature 'users' do
 
-  scenario 'Creating a level 3 user from scratch' do
-
+  background do
     login_as_manager
+  end
 
+  scenario 'Creating a level 3 user from scratch' do
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '1234'
     click_button 'Check'
@@ -40,6 +41,28 @@ feature 'users' do
     expect(user.reload).to be_confirmed
 
     expect(page).to have_content "Your account has been confirmed."
+  end
+
+  scenario 'Delete an account' do
+    user = create(:user, :level_two)
+
+    visit management_document_verifications_path
+    fill_in 'document_verification_document_number', with: user.document_number
+    click_button 'Check'
+    expect(page).to have_content "Identified as: Username: #{user.username}"
+
+    click_link 'Delete account'
+    fill_in 'user_erase_reason', with: 'I am not living in the city anymore'
+    click_button 'Delete account'
+
+    expect(page).to have_content "The user account has been deleted"
+
+    visit management_document_verifications_path
+    fill_in 'document_verification_document_number', with: user.document_number
+    click_button 'Check'
+
+    expect(page).to_not have_content "Identified as: Username: #{user.username}"
+    expect(page).to have_content "This document was found in the census, but it has no user account associated to it."
   end
 
 end

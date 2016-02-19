@@ -17,7 +17,6 @@ feature 'DocumentVerifications' do
   end
 
   scenario 'Verifying a level 2 user displays the verification form' do
-
     user = create(:user, :level_two)
 
     visit management_document_verifications_path
@@ -34,7 +33,6 @@ feature 'DocumentVerifications' do
   end
 
   scenario 'Verifying a user which does not exist and is not in the census shows an error' do
-
     expect_any_instance_of(Verification::Management::Document).to receive(:in_census?).and_return(false)
 
     visit management_document_verifications_path
@@ -45,7 +43,6 @@ feature 'DocumentVerifications' do
   end
 
   scenario 'Verifying a user which does exists in the census but not in the db redirects allows sending an email' do
-
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '1234'
     click_button 'Check'
@@ -54,7 +51,6 @@ feature 'DocumentVerifications' do
   end
 
   scenario 'Document number is format-standarized' do
-
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '12345 - h'
     click_button 'Check'

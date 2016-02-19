@@ -217,7 +217,7 @@ Rails.application.routes.draw do
 
     resources :email_verifications, only: [:new, :create]
 
-    resources :users, only: [:new, :create] do
+    resources :users, only: [:new, :create, :edit, :destroy] do
       collection do
         delete :logout
       end

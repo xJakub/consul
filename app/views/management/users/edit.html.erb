@@ -1,0 +1,5 @@
+<%= form_for @user, url: management_user_path, method: :delete do |f| %>
+  <%= f.text_area :erase_reason %>
+  <%= f.submit t("management.users.delete_account_button"), class: "button radius",
+              data: { confirm: t("management.users.delete_account_confirm") } %>
+<% end %>

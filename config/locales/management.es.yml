@@ -16,8 +16,10 @@ es:
     document_type_label: Tipo de documento
     document_verifications:
       already_verified: Esta cuenta de usuario ya está verificada.
+      delete_account_link: 'Eliminar cuenta'
       has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla.
       in_census_has_following_permissions: 'Este usuario puede participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:'
+      incorrect_user_info: 'Si los datos no son correctos, puede eliminar la cuenta y crear una nueva.'
       not_in_census: Este documento no está registrado en el Padrón Municipal de Madrid.
       not_in_census_info: 'Las personas no empadronadas en Madrid pueden participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:'
       please_check_account_data: Compruebe que los datos anteriores son correctos para proceder a verificar la cuenta completamente.
@@ -68,7 +70,10 @@ es:
       signed_out_managed_user: Se ha cerrado correctamente la sesión del usuario.
     username_label: Nombre de usuario
     users:
+      account_deleted: 'La cuenta del usuario ha sido eliminada'
       create_user: Crear nueva cuenta de usuario
       create_user_info: 'Procedemos a crear un usuario con la siguiente información:'
       create_user_submit: Crear usuario
       create_user_success_html: Hemos enviado un correo electrónico a <b>%{email}</b> para verificar que es suya. El correo enviado contiene un link que el usuario deberá pulsar. Entonces podrá seleccionar una clave de acceso, y entrar en la web de participación.
+      delete_account_button: 'Eliminar account'
+      delete_account_confirm: '¿Estás seguro?'

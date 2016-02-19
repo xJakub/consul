@@ -18,6 +18,16 @@ class Management::UsersController < Management::BaseController
     end
   end
 
+  def edit
+    @user = managed_user
+  end
+
+  def destroy
+    managed_user.erase(erase_params[:erase_reason])
+    destroy_session
+    redirect_to management_root_url, notice: t("management.users.account_deleted")
+  end
+
   def logout
     destroy_session
     redirect_to management_root_url, notice: t("management.sessions.signed_out_managed_user")
@@ -27,6 +37,10 @@ class Management::UsersController < Management::BaseController
 
     def user_params
       params.require(:user).permit(:document_type, :document_number, :username, :email)
+    end
+
+    def erase_params
+      params.require(:user).permit(:erase_reason)
     end
 
     def destroy_session

@@ -2,6 +2,11 @@
   <%= t("management.document_verifications.please_check_account_data") %>
 </div>
 
+<p>
+  <%= t("management.document_verifications.incorrect_user_info") %>
+  <%= link_to t("management.document_verifications.delete_account_link"), edit_management_user_path(id: -1) %>
+</p>
+
 <%= render 'management/user_permissions',
       message: t("management.document_verifications.in_census_has_following_permissions"),
       permissions: [:debates, :create_proposals, :support_proposals] %>

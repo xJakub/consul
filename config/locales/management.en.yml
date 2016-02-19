@@ -16,8 +16,10 @@ en:
     document_type_label: Document type
     document_verifications:
       already_verified: This user account is already verified.
+      delete_account_link: 'Delete account'
       has_no_account_html: In order to create an account, go to %{link} and click in <b>'Register'</b> in the upper-left part of the screen.
       in_census_has_following_permissions: 'This user can participate in the website with the following permissions:'
+      incorrect_user_info: 'If the information is not correct, you can delete the user account and create a new one'
       not_in_census: This document is not registered in Madrid.
       not_in_census_info: 'Citizens not in the Census can participate in the website with the following permissions:'
       please_check_account_data: Please check that the account data above are correct.
@@ -68,7 +70,10 @@ en:
       signed_out_managed_user: User session signed out successfully.
     username_label: Username
     users:
+      account_deleted: 'The user account has been deleted'
       create_user: Create a new account
       create_user_info: 'We will create an account with the following data:'
       create_user_submit: Create user
       create_user_success_html: We have sent an email to the email address <b>%{email}</b> in order to verify that it belongs to this user. It contains a link they have to click. Then they will have to set their access password before being able to log in to the website
+      delete_account_button: 'Delete account'
+      delete_account_confirm: 'Are you sure?'
