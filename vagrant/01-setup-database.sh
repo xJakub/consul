@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /vagrant
+
 # pg create consul user
 cat <<EOF | sudo -u postgres psql
 CREATE USER consul WITH PASSWORD 'consul' CREATEDB;
