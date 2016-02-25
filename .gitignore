@@ -29,3 +29,11 @@
 # Mac finder artifacts
 .DS_Store
 .ruby-gemset
+
+# Ignore vagrant working directory
+/.vagrant
+
+# Ignore backup copies
+*~
+*.*~
+

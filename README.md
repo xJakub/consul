@@ -48,6 +48,8 @@ bin/rails s
 
 ```
 
+By default the application is listening in the localhost interface. If you want to change the interface just add the ```-b 0.0.0.0``` parameter.
+
 Prerequisites for testing: install PhantomJS >= 2.0
 
 Run the tests with:
