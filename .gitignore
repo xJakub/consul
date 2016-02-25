@@ -32,3 +32,8 @@
 
 # Ignore vagrant working directory
 /.vagrant
+
+# Ignore backup copies
+*~
+*.*~
+
