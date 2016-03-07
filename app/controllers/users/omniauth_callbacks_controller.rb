@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  skip_before_action :verify_authenticity_token
 
   def twitter
     sign_in_with :twitter_login, :twitter
@@ -10,6 +11,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def google_oauth2
     sign_in_with :google_login, :google_oauth2
+  end
+
+  def saml
+    sign_in_with :saml_login, :saml
   end
 
   def after_sign_in_path_for(resource)
@@ -28,6 +33,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       auth = env["omniauth.auth"]
 
       identity = Identity.first_or_create_from_oauth(auth)
+      
       @user = current_user || identity.user || User.first_or_initialize_for_oauth(auth)
 
       if save_user(@user)
