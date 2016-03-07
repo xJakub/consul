@@ -1280,6 +1280,20 @@ table {
   }
 }
 
+.button.button-saml {
+  background: #BA0C2F;
+
+  &:before {
+    background: #A90B2B;
+    content: image-url("ucm_login_button.png");
+    left: 0;
+    line-height: 0;
+    padding: rem-calc(12) rem-calc(20);
+    position: absolute;
+    top: 0;
+  }
+}
+
 .social {
 
   a {
