@@ -517,6 +517,9 @@ es:
     google_oauth2:
       sign_in: "Entra con Google"
       sign_up: "Regístrate con Google"
+    saml:
+      sign_in: "Entra con SAML"
+      sign_up: "Regístrate con SAML"
   legislation:
     help:
       title: "¿Cómo puedo comentar este documento?"

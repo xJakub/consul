@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   prepend_before_action :authenticate_scope!, only: [:edit, :update, :destroy, :finish_signup, :do_finish_signup]
+  before_action :redirect_if_disabled, only: [:new, :create]
 
   def new
     super do |user|
@@ -69,6 +70,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     def after_inactive_sign_up_path_for(resource_or_scope)
       users_sign_up_success_path
+    end
+    
+    def redirect_if_disabled
+      if not Setting['feature.registration']
+        redirect_to new_user_session_path
+      end
     end
 
 end

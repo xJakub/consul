@@ -3,8 +3,8 @@ default: &default
   encoding: unicode
   host: localhost
   pool: 5
-  username:
-  password:
+  username: @pgusername@
+  password: @pgpassword@
 
 development: &development
   <<: *default
